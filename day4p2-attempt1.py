@@ -12,9 +12,9 @@ for i in temp:
 print(elfpairs)
 totalpairs=0
 for pair in elfpairs:
-    if extrapolateDash(pair[0]) in extrapolateDash(pair[1]) or extrapolateDash(pair[1]) in extrapolateDash(pair[0]):
-        print(f'found one, {extrapolateDash(pair[0])} and {extrapolateDash(pair[1])}')
+    if FindCommoninArray(extrapolateDashArray(pair[1]), extrapolateDashArray(pair[0])):
+        #print(f'found one, {extrapolateDash(pair[0])} and {extrapolateDash(pair[1])}')
         print(f'found one, {pair[0]} and {pair[1]}')
         totalpairs = totalpairs + 1
 print(f'we found {totalpairs} total pairs')
-print("the answer should be 2")
+print("the answer should be 4")
