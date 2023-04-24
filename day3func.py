@@ -14,7 +14,7 @@ def find3Common(side1,side2,side3):
     for _ in side1:
         if _ in side2:
             if _ in side3:
-                print(_)
+                #print(_)
                 return _
 
 def findPriority(letter):
