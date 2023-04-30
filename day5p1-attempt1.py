@@ -1,7 +1,7 @@
 file=open("day5-input.sample","r")
 
 temp=file.readlines()
-from day4func import *
+from day5func import *
 
 '''example 
     [D]    
