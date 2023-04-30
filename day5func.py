@@ -30,9 +30,9 @@ def getBoxesFromInput(text):
                         numberofspace=0
                         skip=0
 
-        print(smallarray)
+        #print(smallarray)
         bigarray.append(smallarray)
-
+    return bigarray
     #goal is an array that looks like of like : 
     #[ ][d][ ]
     #[n][c][ ] but maybe it could be turnes sideways? 
@@ -42,7 +42,8 @@ def getBoxesFromInput(text):
 
 
 def renderStacks(stacks):
-    pass
+    for i in stacks:
+        print(i)
 
 def moveBox(old,new,number):
     pass
