@@ -40,7 +40,6 @@ def getBoxesFromInput(text):
 
 
 
-
 def renderStacks(stacks):
     for i in stacks:
         print(i)
