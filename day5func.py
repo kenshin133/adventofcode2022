@@ -44,5 +44,12 @@ def renderStacks(stacks):
     for i in stacks:
         print(i)
 
-def moveBox(old,new,number):
-    pass
+def moveBetweenStacks(stacks,quantity,fromStack,toStack):
+    for i in range(0,quantity):
+        grab=getTopBox(stacks,1)
+        #print(getTopBox(stacks,1))
+
+def getTopBox(stacks,stackNumber):
+    for j in stacks:
+        #-1 so we can shift the position from 1-3 to 0-2
+        print(j[stackNumber-1])
