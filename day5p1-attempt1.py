@@ -23,11 +23,16 @@ from day5func import *
 stacks = getBoxesFromInput(temp)
 renderStacks(stacks)
 moveBetweenStacks(stacks, 1, 2,1 )
+growArray(stacks)
 moveBetweenStacks(stacks, 3, 1,3 )
+growArray(stacks)
+growArray(stacks)
+renderStacks(stacks)
+
 moveBetweenStacks(stacks, 2, 2,1 )
 moveBetweenStacks(stacks, 1, 1,2 )
 renderStacks(stacks)
-
+growArray(stacks)
 #write the file, replace this with a proper rendering
 #for i in temp:
 #    print(i.replace('\n',''))

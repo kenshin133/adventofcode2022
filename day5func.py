@@ -78,6 +78,7 @@ def grabTopBox(stacks,stackNumber):
 def placeBox(stacks,boxValue,toStack):
     toIndex=getTopEmpty(stacks, toStack -1)
     print(toIndex)
+    print(f'to stack : {toStack} {toIndex}')
     stacks[toIndex][toStack -1] = boxValue
     
 
@@ -86,17 +87,30 @@ def getTopEmpty(stacks,stacktoaddto):
     lastempty=0
     pos=0
     for j in stacks:
-        if j[stacktoaddto-1] == " " and pos == len(stacks):
-            print("doot")
+        if j[stacktoaddto] == " " and pos == len(stacks) -1:
+            return len(stacks) -1
             break
         elif j[stacktoaddto] != " ":
-            print (f'somethin {j[stacktoaddto]}')
-            print("sil")
+            pos = pos + 1
             return lastempty - 1
         elif j[stacktoaddto] == " ":
-            print("add")
             lastempty = lastempty + 1
+            pos = pos + 1
         else:
-            print("last")
             break
+    print(f'pos : {pos}')
     return lastempty
+def growArray(stacks):
+    for i in stacks[0]:
+        
+        if i != " ":
+            temparray=[]
+            finalArray=[]
+            #make top column
+            
+            
+            for d in range(0,len(stacks[0])):
+                ar=" "
+                temparray.append(ar)
+                #print(temparray)
+            stacks.insert(0,temparray)
