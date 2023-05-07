@@ -22,7 +22,9 @@ from day5func import *
 
 stacks = getBoxesFromInput(temp)
 renderStacks(stacks)
-moveBetweenStacks(stacks, 1, 2, 1)
+moveBetweenStacks(stacks, 1, 1, 1)
+renderStacks(stacks)
+
 #write the file, replace this with a proper rendering
 #for i in temp:
 #    print(i.replace('\n',''))
