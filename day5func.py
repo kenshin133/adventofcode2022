@@ -50,13 +50,13 @@ def moveBetweenStacks(stacks,quantity,fromStack,toStack):
         grabBox,grabBoxIndex=grabTopBox(stacks,fromStack)
         #print(getTopBox(stacks,1))
         print(grabBox,grabBoxIndex)
+        placeBox(stacks,grabBox,toStack)
 
 
 def grabTopBox(stacks,stackNumber):
 
     pos=0
     lastempty=0
-
     for j in stacks:
         
         #-1 so we can shift the position from 1-3 to 0-2
@@ -68,11 +68,35 @@ def grabTopBox(stacks,stackNumber):
             #print(pos)
             lastvalue=j[stackNumber-1]
             (stacks[pos][stackNumber-1]) = " "
-
-            return j[stackNumber-1],pos
+            #print(j)
+            return lastvalue,pos
             break
         pos=pos+1
         #print(f" pos is : {pos} and lastempty is {lastempty}")
 
+
+def placeBox(stacks,boxValue,toStack):
+    toIndex=getTopEmpty(stacks, toStack -1)
+    print(toIndex)
+    stacks[toIndex][toStack -1] = boxValue
+    
+
+
 def getTopEmpty(stacks,stacktoaddto):
-    pass
+    lastempty=0
+    pos=0
+    for j in stacks:
+        if j[stacktoaddto-1] == " " and pos == len(stacks):
+            print("doot")
+            break
+        elif j[stacktoaddto] != " ":
+            print (f'somethin {j[stacktoaddto]}')
+            print("sil")
+            return lastempty - 1
+        elif j[stacktoaddto] == " ":
+            print("add")
+            lastempty = lastempty + 1
+        else:
+            print("last")
+            break
+    return lastempty
