@@ -87,7 +87,10 @@ def getTopEmpty(stacks,stacktoaddto):
     lastempty=0
     pos=0
     for j in stacks:
-        if j[stacktoaddto] == " " and pos == len(stacks) -1:
+        if j[stacktoaddto] != " " and pos == 0:
+            growArray(stacks)
+            return lastempty
+        elif j[stacktoaddto] == " " and pos == len(stacks) -1:
             return len(stacks) -1
             break
         elif j[stacktoaddto] != " ":
@@ -100,6 +103,8 @@ def getTopEmpty(stacks,stacktoaddto):
             break
     print(f'pos : {pos}')
     return lastempty
+
+
 def growArray(stacks):
     for i in stacks[0]:
         

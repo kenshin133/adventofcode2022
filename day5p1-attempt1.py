@@ -20,17 +20,18 @@ from day5func import *
 
 '''
 
+#TODO automate directions
 stacks = getBoxesFromInput(temp)
 renderStacks(stacks)
 moveBetweenStacks(stacks, 1, 2,1 )
-growArray(stacks)
 moveBetweenStacks(stacks, 3, 1,3 )
-growArray(stacks)
-growArray(stacks)
 renderStacks(stacks)
 
 moveBetweenStacks(stacks, 2, 2,1 )
+moveBetweenStacks(stacks, 1, 1,3 )
 moveBetweenStacks(stacks, 1, 1,2 )
+moveBetweenStacks(stacks, 1, 2,3 )
+
 renderStacks(stacks)
 growArray(stacks)
 #write the file, replace this with a proper rendering
