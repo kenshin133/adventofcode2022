@@ -35,9 +35,5 @@ growArray(stacks)
 #    print(i.replace('\n',''))
 
 #TODO Add method to give output..
-print("        [D]
-        [N]
-        [Z]
-[M] [C] [P]
- 1   2   3")
+print("        [D]\n        [N]\n        [Z]\n[M] [C] [P]\n 1   2   3")
 
