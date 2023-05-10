@@ -22,15 +22,11 @@ from day5func import *
 
 #TODO automate directions
 stacks = getBoxesFromInput(temp)
-renderStacks(stacks)
-moveBetweenStacks(stacks, 1, 2,1 )
-moveBetweenStacks(stacks, 3, 1,3 )
-renderStacks(stacks)
+directions = getDirections(temp)
+for direction in directions:
+    quantity,frompile,topile = parseDirection(direction)
+    moveBetweenStacks(stacks,quantity,frompile,topile)
 
-moveBetweenStacks(stacks, 2, 2,1 )
-moveBetweenStacks(stacks, 1, 1,3 )
-moveBetweenStacks(stacks, 1, 1,2 )
-moveBetweenStacks(stacks, 1, 2,3 )
 
 renderStacks(stacks)
 growArray(stacks)

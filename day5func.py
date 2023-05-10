@@ -49,7 +49,7 @@ def moveBetweenStacks(stacks,quantity,fromStack,toStack):
     for i in range(0,quantity):
         grabBox,grabBoxIndex=grabTopBox(stacks,fromStack)
         #print(getTopBox(stacks,1))
-        print(grabBox,grabBoxIndex)
+        #print(grabBox,grabBoxIndex)
         placeBox(stacks,grabBox,toStack)
 
 
@@ -77,8 +77,8 @@ def grabTopBox(stacks,stackNumber):
 
 def placeBox(stacks,boxValue,toStack):
     toIndex=getTopEmpty(stacks, toStack -1)
-    print(toIndex)
-    print(f'to stack : {toStack} {toIndex}')
+    #print(toIndex)
+    #print(f'to stack : {toStack} {toIndex}')
     stacks[toIndex][toStack -1] = boxValue
     
 
@@ -101,7 +101,7 @@ def getTopEmpty(stacks,stacktoaddto):
             pos = pos + 1
         else:
             break
-    print(f'pos : {pos}')
+    #print(f'pos : {pos}')
     return lastempty
 
 
@@ -119,3 +119,21 @@ def growArray(stacks):
                 temparray.append(ar)
                 #print(temparray)
             stacks.insert(0,temparray)
+
+def getDirections(lines):
+    #print(lines)
+    #['    [D]    \n', '[N] [C]    \n', '[Z] [M] [P]\n', ' 1   2   3 \n', '\n', 'move 1 from 2 to 1\n', 'move 3 from 1 to 3\n', 'move 2 from 2 to 1\n', 'move 1 from 1 to 2']
+    #is the input, split out usable arrays from the end
+    rules=[]
+    for i in lines:
+        if "move" in i:
+            #print(i)
+            rules.append(i)
+            #print(rules)
+    return rules
+
+def parseDirection(direction):
+    print(direction)
+    direction=direction.split(" ")
+    print(f'returning {direction[1]},{direction[3]},{direction[5]}')    
+    return int(direction[1]),int(direction[3]),int(direction[5])
