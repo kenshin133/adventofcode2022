@@ -2,14 +2,14 @@ file=open("day1-input","r")
 
 temp=file.readlines()
 
-'''tl;dr 
-out of groups of calories seperated by newlines which elf has the most?
-5000
-6000
+# '''tl;dr 
+# out of groups of calories seperated by newlines which elf has the most?
+# 5000
+# 6000
 
-7000
-8000
-9000'''
+# 7000
+# 8000
+# 9000'''
 
 
 elfTotals=[]
