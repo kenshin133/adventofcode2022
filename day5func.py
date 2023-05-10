@@ -82,7 +82,6 @@ def placeBox(stacks,boxValue,toStack):
     stacks[toIndex][toStack -1] = boxValue
     
 
-
 def getTopEmpty(stacks,stacktoaddto):
     lastempty=0
     pos=0
@@ -120,6 +119,7 @@ def growArray(stacks):
                 #print(temparray)
             stacks.insert(0,temparray)
 
+
 def getDirections(lines):
     #print(lines)
     #['    [D]    \n', '[N] [C]    \n', '[Z] [M] [P]\n', ' 1   2   3 \n', '\n', 'move 1 from 2 to 1\n', 'move 3 from 1 to 3\n', 'move 2 from 2 to 1\n', 'move 1 from 1 to 2']
@@ -131,6 +131,7 @@ def getDirections(lines):
             rules.append(i)
             #print(rules)
     return rules
+
 
 def parseDirection(direction):
     print(direction)
