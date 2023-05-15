@@ -47,10 +47,19 @@ def renderStacks(stacks):
 
 def moveBetweenStacks(stacks,quantity,fromStack,toStack):
     for i in range(0,quantity):
-        grabBox,grabBoxIndex=grabTopBox(stacks,fromStack)
+        grabBox=grabTopBox(stacks,fromStack)
         #print(getTopBox(stacks,1))
         #print(grabBox,grabBoxIndex)
-        placeBox(stacks,grabBox,toStack)
+        placeBoxs(stacks,grabBox,toStack)
+
+
+def moveMultipleBetweenStacks(stacks,quantity,fromStack,toStack):
+    boxes=[]
+    for i in range(0,quantity):
+        boxes.append(grabTopBox(stacks,fromStack))
+        #print(boxes)
+        print(f"something {boxes}")
+    placeBoxs(stacks,boxes,toStack)
 
 
 def grabTopBox(stacks,stackNumber):
@@ -69,7 +78,7 @@ def grabTopBox(stacks,stackNumber):
             lastvalue=j[stackNumber-1]
             (stacks[pos][stackNumber-1]) = " "
             #print(j)
-            return lastvalue,pos
+            return lastvalue
             break
         pos=pos+1
         #print(f" pos is : {pos} and lastempty is {lastempty}")
@@ -81,6 +90,26 @@ def placeBox(stacks,boxValue,toStack):
     #print(f'to stack : {toStack} {toIndex}')
     stacks[toIndex][toStack -1] = boxValue
     
+    
+def placeBoxs(stacks,boxes,toStack):
+    index=1
+    print(boxes)
+    if len(boxes) != 1: 
+        boxes.reverse()
+        print(boxes)
+        for boxValue in boxes:
+            toIndex=getTopEmpty(stacks, toStack -1)
+            #print(toIndex)
+            #print(f'to stack : {toStack} {toIndex}')
+            stacks[toIndex][toStack -1] = boxValue[0]
+            index + 1
+    else:
+        toIndex=getTopEmpty(stacks, toStack -1)
+        #print(toIndex)
+        #print(f'to stack : {toStack} {toIndex}')
+        stacks[toIndex][toStack -1] = boxes[0]
+        index + 1
+
 
 def getTopEmpty(stacks,stacktoaddto):
     lastempty=0
